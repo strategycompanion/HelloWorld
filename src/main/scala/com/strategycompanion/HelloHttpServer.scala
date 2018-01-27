@@ -9,7 +9,7 @@ object HelloHttpServer extends HttpApp{
       path("id" / Segment) { id =>
         get {
           println("server get " + id)
-          complete(s"Hello World from akka v1")
+          complete(s"Hello World from akka v1/id="+id)
         } ~
           post {
             entity(as[String]) { entity =>
@@ -23,7 +23,12 @@ object HelloHttpServer extends HttpApp{
 }
 
 object HelloHttpServerApplication extends App {
-  val port = System.getenv("PORT").toInt
+  var port:Int = 80
+  try{
+    port = System.getenv("PORT").toInt
+  }catch{
+    case e: Exception => println("no port assigned, use port 80.");
+  }
   HelloHttpServer.startServer("0.0.0.0", port)
 }
 
