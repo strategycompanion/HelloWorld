@@ -1,0 +1,9 @@
+{
+  "name": "HelloWorld",
+  "description": "Hello world.",
+  "buildpacks": [
+    {
+      "url": "heroku/scala"
+    }
+  ]
+}
