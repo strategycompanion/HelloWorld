@@ -19,7 +19,6 @@ object HelloHttpServer extends HttpApp{
           }
       }
     }
- 
 }
 
 object HelloHttpServerApplication extends App {
