@@ -24,7 +24,7 @@ object HelloHttpServer extends HttpApp{
 
 object HelloHttpServerApplication extends App {
   var port:Int = 80
-  try{ 
+  try{
     port = System.getenv("PORT").toInt
   }catch{
     case e: Exception => println("no port assigned, use port 80.");
