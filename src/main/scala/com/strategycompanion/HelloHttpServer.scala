@@ -37,4 +37,4 @@ object HelloHttpServerApplication extends App {
   }
 }
 
-//localhost/v1/id/2
+//localhost/v1/id/me
