@@ -20,7 +20,7 @@ object HelloHttpServer extends HttpApp{
       }
     }
 }
- 
+
 object HelloHttpServerApplication extends App {
   var port:Int = 80
   try{
@@ -28,7 +28,13 @@ object HelloHttpServerApplication extends App {
   }catch{
     case e: Exception => println("no port assigned, use port 80.");
   }
-  HelloHttpServer.startServer("0.0.0.0", port)
+
+  try{
+    println("start server at port 8080.")
+    HelloHttpServer.startServer("0.0.0.0", 8080)
+  }catch{
+    case e: Exception => HelloHttpServer.startServer("0.0.0.0", 8080)
+  }
 }
 
 //localhost/v1/id/2
